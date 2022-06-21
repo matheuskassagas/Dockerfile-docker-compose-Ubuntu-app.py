@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  ubuntu:
+    image: ubuntu:20.04
+    container_name: ubt1
+    build:
+      context: ./imgUbuntu/
+      dockerfile: Dockerfile
+    command: python app.py
+    ports:
+      - 8080:5000
+  
+  python:
+    image: python:3
+    container_name: py1
+    build:
+      context: ./imgPython/
+      dockerfile : Dockerfile
+    command: python app.py
+    ports:
+      - 9090:5000
+    
